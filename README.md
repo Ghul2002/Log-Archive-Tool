@@ -1,5 +1,5 @@
 # Log-Archive-Tool
-## Simple bash script for archiving logs (ex. `/var/log`)
+## Simple bash script for archiving logs (e.g. `/var/log`)
 
 Usage: `log-archive <log-directory>`
 The script will generate new directory in tar.gz format, including files from indicated directory.
