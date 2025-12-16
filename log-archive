@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ "$EUID" -ne 0 ]; then
+  echo "Run this script as root"
+  exit 1
+fi
+
+if [ ! -d "$1" ]; then
+        echo "Usage: $0 <log-directory>"
+        exit 1
+fi
+        path=$1
+        timestamp=$(date "+%Y%m%d_%H%M%S")
+        archive="logs_archive_$timestamp.tar.gz"
+        tar -czf "$archive" "$path"
+
+        echo "Archive $archive created succesfully"
